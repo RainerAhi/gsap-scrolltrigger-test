@@ -5,7 +5,7 @@ import { SectionTwo } from "./Sections/SectionTwo";
 
 function App() {
     return (
-        <main className="main" >
+        <div>
             <div  className="experience">
                 <Experience />
             </div>
@@ -14,7 +14,7 @@ function App() {
             <SectionTwo />
             <SectionThree />
             
-        </main>
+        </div>
     )
 }
 

@@ -12,12 +12,22 @@ export default function Experience() {
 
   return (
     <>
-    <Canvas shadows camera={{ position: [3, 0.8, 5], fov: 35 }} >
+    <Canvas shadows camera={{ position: [3, 3, 3], fov: 35 }} >
       <SoftShadows intensity={ 20 } />
+      <CameraRig>
         <KeyboardModel />
+        </CameraRig>
       <OrbitControls target={[0, 0, 0]} minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ false } enableRotate={ true } />
       <Environment preset='sunset' />
       </Canvas>
       </>
   )
+}
+
+function CameraRig({ children }) {
+  const group = useRef()
+  useFrame((state, delta) => {
+    easing.dampE(group.current.rotation, [0, -state.pointer.x / 10, 0], 0.5, delta)
+  })
+  return <group ref={group}>{children}</group>
 }

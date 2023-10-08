@@ -12,6 +12,9 @@ export default function KeyboardModel(props) {
   const tl = gsap.timeline()
 
   useLayoutEffect(() => {
+
+    //FIRST TO SECOND
+
     tl.to(camera.position, {
       x: 8,
       y: 4,
@@ -24,7 +27,41 @@ export default function KeyboardModel(props) {
         immediateRender: false,
       },
     })
+    
+    //SECOND TO THIRD
+
+    .to(camera.position, {
+      x: 6,
+      y: 7,
+      z: 2,
+      scrollTrigger: {
+        trigger: ".third-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+    })
+    
   }, [])
+
+
+  //BUTTON GSAP ANIMATION
+
+  window.addEventListener("button--test", () => {
+    tl.to(camera.position, {
+      x: 8,
+      y: 4,
+      z: 2,
+      scrollTrigger: {
+        trigger: ".second-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+    })
+  })
 
   return (
     <group {...props} dispose={null} ref={model} >
