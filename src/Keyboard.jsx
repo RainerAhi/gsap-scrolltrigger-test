@@ -3,11 +3,11 @@ import { useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as THREE from "three"
 
 export default function KeyboardModel(props) {
   const { nodes, materials } = useGLTF("./minikeyboard.glb");
-  const { camera } = useThree()
-  const model = useRef()
+  const { camera, scene } = useThree()
 
   const tl = gsap.timeline()
 
@@ -16,8 +16,8 @@ export default function KeyboardModel(props) {
     //FIRST TO SECOND
 
     tl.to(camera.position, {
-      x: 8,
-      y: 4,
+      x: 2,
+      y: 2,
       z: 2,
       scrollTrigger: {
         trigger: ".second-section",
@@ -31,8 +31,8 @@ export default function KeyboardModel(props) {
     //SECOND TO THIRD
 
     .to(camera.position, {
-      x: 6,
-      y: 7,
+      x: 2,
+      y: 4,
       z: 2,
       scrollTrigger: {
         trigger: ".third-section",
@@ -48,23 +48,32 @@ export default function KeyboardModel(props) {
 
   //BUTTON GSAP ANIMATION
 
-  window.addEventListener("button--test", () => {
+	// document.querySelectorAll('.button--test')?.forEach(item => {
+	// 	item.addEventListener('click', () => {
+	// 		window.scrollTo({ top: 2000, left: 0, behavior: 'smooth' })
+	// 	})
+	// })
+
+  const button = document.getElementById("button--test");
+
+  function handleButtonClick() {
+
     tl.to(camera.position, {
       x: 8,
       y: 4,
       z: 2,
-      scrollTrigger: {
-        trigger: ".second-section",
-        start: "top bottom",
-        end: "top top",
-        scrub: true,
-        immediateRender: false,
-      },
-    })
-  })
+      duration: 1,
+      ease: "power2.out"
+    });
+
+    console.log("clicked button")
+
+  }
+
+  button.addEventListener("click", handleButtonClick);
 
   return (
-    <group {...props} dispose={null} ref={model} >
+    <group {...props} dispose={null} >
       <mesh
         castShadow
         receiveShadow

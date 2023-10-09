@@ -12,12 +12,12 @@ export default function Experience() {
 
   return (
     <>
-    <Canvas shadows camera={{ position: [3, 3, 3], fov: 35 }} >
+    <Canvas shadows camera={{ position: [3, 3, 3], fov: 35, }} >
       <SoftShadows intensity={ 20 } />
       <CameraRig>
         <KeyboardModel />
         </CameraRig>
-      <OrbitControls target={[0, 0, 0]} minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ false } enableRotate={ true } />
+      {/* <OrbitControls target={[0, 0, 0]} minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ false } enableRotate={ true } /> */}
       <Environment preset='sunset' />
       </Canvas>
       </>
