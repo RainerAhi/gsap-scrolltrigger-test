@@ -95,9 +95,7 @@ export default function Experience() {
   return (
     <>
       <SoftShadows intensity={ 20 } />
-      <CameraRig>
         <KeyboardModel />
-        </CameraRig>
       <OrbitControls ref={controlsRef} minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ false } enableRotate={ true } />
       <Environment preset='sunset' />
       </>
