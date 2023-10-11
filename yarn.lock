@@ -571,6 +571,11 @@
   resolved "https://registry.npmjs.org/@stitches/react/-/react-1.2.8.tgz"
   integrity sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==
 
+"@studio-freight/lenis@^1.0.26":
+  version "1.0.26"
+  resolved "https://registry.npmjs.org/@studio-freight/lenis/-/lenis-1.0.26.tgz"
+  integrity sha512-PLpPMtYoo50Z1otpUpGONK/BkJ0nrE7pY6Q1+KMWuPup+S+XFR/FJOXGkrtISzc6DtHgilbi1b6xDgDluFHsaA==
+
 "@types/draco3d@^1.4.0":
   version "1.4.5"
   resolved "https://registry.npmjs.org/@types/draco3d/-/draco3d-1.4.5.tgz"

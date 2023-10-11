@@ -1,3 +1,4 @@
+import CanvasContainer from "./CanvasContainer";
 import Experience from "./Experience";
 import { SectionOne } from "./Sections/SectionOne";
 import { SectionThree } from "./Sections/SectionThree";
@@ -7,7 +8,7 @@ function App() {
     return (
         <div>
             <div  className="experience">
-                <Experience />
+                <CanvasContainer />
             </div>
 
             <SectionOne />
